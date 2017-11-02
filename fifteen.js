@@ -9,11 +9,11 @@ window.onload = function(){
 	var shuffButton = document.getElementById("shufflebutton");//capture the shuffle button
 	var header = document.body.children[0];//capture header element
 
-//################## S E T - U P - G R I D - A N D - E V E N T - L I S T E N E R S ##################//
 
-	var j=0;//column counter
-	var k=0;//row counter
-	var i=0;//loop iterator
+
+	var j=0;
+	var k=0;
+	var i=0;
 		
 	for(i=0;i<puzzArea.length;i++){
 		puzzArea[i].classList.add("puzzlepiece");//add puzzle piece class to each div element in the puzzle area
@@ -43,7 +43,7 @@ window.onload = function(){
 	//add on click event listener for shuffle button
 	shuffButton.addEventListener("click",function(){shuffle();},false);
 	
-//#################################### S E T - U P - E N D E D ####################################//
+
 
 	function isMovable(pos){
 		if(puzzArea[pos].style.left == blankx || puzzArea[pos].style.top == blanky){//check if block is in same row or column as blank space in the grid
@@ -76,11 +76,11 @@ window.onload = function(){
 			{
 				puzzArea[i].style.backgroundImage = "url('https://kaneshorrorblog.files.wordpress.com/2010/12/the_dark_knight_movie_poster.jpg')";//set image for solved puzzle
 				puzzArea[i].style.backgroundSize = "400px 400px";//set image size to size of grid
-				puzzArea[i].style.borderColor = "#009933";//set border color to green
+				puzzArea[i].style.borderColor = "#080066";//set border color to blue
 			}
 			header.innerHTML =  "<h1>YOU SOLVED IT!</h1>";//change header element to display victory message
 			header.style.fontSize = "14pt";//reset original message font size
-			header.style.color = "#006600";//change header element font color
+			header.style.color = "#080066";//change header element font color
 			header.style.fontFamily = "Arial";//change header element font color
 		}
 	}
@@ -101,13 +101,13 @@ window.onload = function(){
 		for(var i=0;i<puzzArea.length;i++)
 		{
 			puzzArea[i].style.backgroundImage = "url('https://render.fineartamerica.com/images/rendered/search/poster/images/artworkimages/medium/1/burger-isometric-plain-mint-ivan-krpan.jpg')";//reset image for unsolved puzzle
-			puzzArea[i].style.borderColor = "black";//set border color to black
+			puzzArea[i].style.borderColor = "red";//set border color to red
 			puzzArea[i].style.backgroundSize = "400px 400px";//set image size to size of grid
 		}
 		document.body.children[0].innerHTML =  "<h1>Fifteen Puzzle</h1>";//reset original message
-		header.style.fontSize = "14pt";//reset original message font size
-		header.style.color = "black";//reset original message colour
-		header.style.fontFamily = "Arial";//change header element font color
+		header.style.fontSize = "14pt";
+		header.style.color = "black";
+		header.style.fontFamily = "Arial";
 	}
 
 	function isSolved(){
